@@ -1,0 +1,34 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Loan ID</th>
+      <th>Loan Amount</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Loan Duration (in years)</th>
+      <th>Payment Interval</th>
+      <th>Payments</th>
+      <th>Payment Term</th>
+      <th>Interest Estimate</th>
+      <th>Loan Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let loan in loans; index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ loans.loanId }}</td>
+      <td>{{ loans.loanAmount | number }}</td>
+      <td>{{ loans.startDate }}</td>
+      <td>{{ loans.endDate }}</td>
+      <td>{{ loans.loanDuration | number }}</td>
+      <td>{{ loans.paymentInterval }}</td>
+      <td>{{ loans.payments| number}}</td>
+      <td>{{ loans.paymentTerm }}</td>
+      <!-- <td>{{ loans.interestEstimate | number}}</td> -->
+      <td>{{ loans.payments }}</td>
+      <button class="btn btn-primary mt-auto btn-sm" (click)=payments(LoanModel.loanId)>Pay</button>
+    </tr>
+  </tbody>
+</table>
